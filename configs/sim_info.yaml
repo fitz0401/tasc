@@ -1,0 +1,58 @@
+# Object Configuration
+# Pre-defined object properties for simulation scenarios
+# These properties are obtained from GPT-4o and stored for reproducible experiments
+# Format: [id, vlm_return_name, mask_name, sim_name]
+# - id: Unique identifier for the object
+# - vlm_return_name: Name used in the vision-language model
+# - mask_name: Name of the mask used in segmentation
+# - sim_name: Name of the object in the simulation
+objects:
+  - id: 0
+    vlm_return_name: Red ceramic plate    # Obtain mask from SAM
+    mask_name: plate_body   # Obtain mask from the simulation
+    sim_name: plate         # Obtain pose from the simulation
+
+  - id: 1
+    vlm_return_name: Wooden block and peg
+    mask_name: wood_block_body
+    sim_name: wood_block
+
+  - id: 2
+    vlm_return_name: Yellow Banana
+    mask_name: banana_body
+    sim_name: banana
+
+  - id: 3
+    vlm_return_name: Hammer with wooden handle
+    mask_name: hammer_body
+    sim_name: hammer
+
+  - id: 4
+    vlm_return_name: Red ceramic mug
+    mask_name: mug_body
+    sim_name: mug
+
+  - id: 5
+    vlm_return_name: Black marker pen
+    mask_name: marker_body
+    sim_name: marker
+
+# Interactions Configuration
+# Pre-defined object interaction relationships for simulation scenarios
+# These relationships are obtained from GPT-4o and stored for reproducible experiments
+# Format: [source_id, target_id, action_type, constraints (optional)]
+# - source_id: ID of the object performing the action
+# - target_id: ID of the object being acted upon  
+# - action_type: Type of interaction (hammer, place, insert, etc.)
+# - constraints: Optional spatial constraint parameters for pose relationships
+interactions:
+  - [3, 1, hammer, [[1, 2, -1]]]
+  - [3, 0, place]
+  - [2, 0, place]
+  - [5, 4, insert, [[0, 2, 1]]]
+  - [2, 0, plate]
+  - [4, 0, place, [[2, 2, 1]]]
+
+scenes:
+  - name: default
+    object_ids: [0, 1, 2, 3, 4, 5]

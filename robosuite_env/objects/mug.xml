@@ -1,0 +1,240 @@
+<mujoco model="mug">
+  <asset>
+    <mesh name="mug_vis" file="meshes/mug_vis.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh0" file="meshes/mug_parts/mug0.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh1" file="meshes/mug_parts/mug1.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh2" file="meshes/mug_parts/mug2.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh3" file="meshes/mug_parts/mug3.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh4" file="meshes/mug_parts/mug4.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh5" file="meshes/mug_parts/mug5.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh6" file="meshes/mug_parts/mug6.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh7" file="meshes/mug_parts/mug7.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh8" file="meshes/mug_parts/mug8.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh9" file="meshes/mug_parts/mug9.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh10" file="meshes/mug_parts/mug10.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh11" file="meshes/mug_parts/mug11.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh12" file="meshes/mug_parts/mug12.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh13" file="meshes/mug_parts/mug13.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh14" file="meshes/mug_parts/mug14.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh15" file="meshes/mug_parts/mug15.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh16" file="meshes/mug_parts/mug16.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh17" file="meshes/mug_parts/mug17.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh18" file="meshes/mug_parts/mug18.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh19" file="meshes/mug_parts/mug19.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh20" file="meshes/mug_parts/mug20.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh21" file="meshes/mug_parts/mug21.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh22" file="meshes/mug_parts/mug22.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh23" file="meshes/mug_parts/mug23.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh24" file="meshes/mug_parts/mug24.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh25" file="meshes/mug_parts/mug25.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh26" file="meshes/mug_parts/mug26.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh27" file="meshes/mug_parts/mug27.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh28" file="meshes/mug_parts/mug28.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh29" file="meshes/mug_parts/mug29.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh30" file="meshes/mug_parts/mug30.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh31" file="meshes/mug_parts/mug31.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh32" file="meshes/mug_parts/mug32.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh33" file="meshes/mug_parts/mug33.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh34" file="meshes/mug_parts/mug34.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh35" file="meshes/mug_parts/mug35.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh36" file="meshes/mug_parts/mug36.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh37" file="meshes/mug_parts/mug37.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh38" file="meshes/mug_parts/mug38.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh39" file="meshes/mug_parts/mug39.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh40" file="meshes/mug_parts/mug40.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh41" file="meshes/mug_parts/mug41.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh42" file="meshes/mug_parts/mug42.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh43" file="meshes/mug_parts/mug43.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh44" file="meshes/mug_parts/mug44.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh45" file="meshes/mug_parts/mug45.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh46" file="meshes/mug_parts/mug46.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh47" file="meshes/mug_parts/mug47.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh48" file="meshes/mug_parts/mug48.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh49" file="meshes/mug_parts/mug49.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh50" file="meshes/mug_parts/mug50.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh51" file="meshes/mug_parts/mug51.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh52" file="meshes/mug_parts/mug52.obj" scale="1.3 1.3 1.3"/>
+    <mesh name="mug_mesh53" file="meshes/mug_parts/mug53.obj" scale="1.3 1.3 1.3"/>
+    <texture name="mug_tex" file="textures/mug.png" type="2d" />
+    <material name="mug_mat" texture="mug_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              mesh="mug_vis" type="mesh" material="mug_mat" contype="0" conaffinity="0" group="1" />
+        <geom mesh="mug_mesh0" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh2" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh3" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh4" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh5" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh6" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh7" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh8" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh9" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh10" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh11" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh12" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh13" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh14" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh15" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh16" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh17" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh18" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh19" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh20" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh21" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh22" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh23" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh24" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh25" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh26" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh27" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh28" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh29" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh30" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh31" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh32" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh33" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh34" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh35" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh36" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh37" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh38" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh39" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh40" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh41" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh42" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh43" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh44" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh45" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh46" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh47" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh48" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh49" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh50" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh51" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh52" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="mug_mesh53" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="5.0 5.0 5.0" material="mug_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <site name="grasp_0" pos="-0.0303 0.0746 0.0913" quat="0.0000 0.9992 0.0000 -0.0408" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_1" pos="0.0602 0.0216 0.0537" quat="-0.1758 -0.0012 0.9687 0.1754" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_2" pos="-0.0152 -0.0249 0.0865" quat="0.0441 -0.0647 0.9717 0.2230" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_3" pos="-0.0756 0.0357 0.0914" quat="0.0517 0.8128 0.5695 0.1110" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_4" pos="0.0145 0.0539 0.0832" quat="-0.0029 0.8472 -0.5137 -0.1354" size="0.005" rgba="0 1 0 0.5"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0.05 0 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.04" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.04" size="0.005" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

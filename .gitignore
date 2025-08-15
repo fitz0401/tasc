@@ -1,0 +1,28 @@
+# Python compiled files
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+__pycache__/
+
+# logs and temp files
+*.log
+*.tmp
+
+# Packaging
+*.egg-info/
+
+# data and images
+ckpts/
+data/
+temp/
+images/
+log/
+
+# Anygrasp related
+*.o
+*.so
+*.egg
+.DS_Store
+.TimeRecord
+license

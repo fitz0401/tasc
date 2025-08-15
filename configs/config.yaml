@@ -1,0 +1,39 @@
+device: &device 'cuda:0'
+seed: &seed 0
+gpt_api_key: ""
+gpt_base_url: ""
+model_name: ''
+
+main:
+  bounds_min: &bounds_min [-0.3, -0.4, -0.9]
+  bounds_max: &bounds_max [0.3, 0.4, -0.3]
+  table_height: &table_height 0.9
+  seed: *seed
+
+vision_module:
+  num_candidates_per_mask: 5
+  min_dist_bt_keypoints: 0.06
+  max_mask_ratio: 0.5
+  device: *device
+  bounds_min: *bounds_min
+  bounds_max: *bounds_max
+  seed: *seed
+  table_region: [-0.4, 0.4, -0.4, 0.4, *table_height, 1.5]  # xmin, xmax, ymin, ymax, zmin, zmax
+  gripper_region: [0, 0, 100, 640]    # [ymin, xmin, ymax, xmax] on 2D image
+  is_mujoco_camera: True
+  apply_pcd_transform: True
+
+goal_predictor:
+  action_apply_time: 0.01 
+  action_dim: 6
+
+grasp_planner:
+  checkpoint_path: './log/checkpoint_detection.tar'
+  max_gripper_width: 0.08
+  gripper_height: 0.03
+  top_down_grasp: True
+  debug: True
+  bounds: [-10.0, 10.0, -10.0, 10.0, -10.0, 10.0]  # xmin, xmax, ymin, ymax, zmin, zmax
+  table_height: *table_height
+  z_offset: 0.01
+  z_limit_above_table: 0.015

@@ -1,0 +1,4 @@
+license/
+log/
+*.so
+.TimeRecord

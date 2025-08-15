@@ -1,0 +1,30 @@
+<mujoco model="wood_block">
+  <asset>
+    <mesh name="wood_block_vis" file="meshes/wood_block_vis.obj" />
+    <mesh name="wood_block_mesh1" file="meshes/wood_block_parts/wood_block1.obj" />
+    <texture name="wood_block_tex" file="textures/wood_block.png" type="2d" />
+    <material name="wood_block_mat" texture="wood_block_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              quat="0 0.7071 0 0.7071"
+              mesh="wood_block_vis" type="mesh" material="wood_block_mat" contype="0" conaffinity="0" group="1" />
+        <!-- nail -->
+        <geom name="nail"
+              quat="0 0 0.08 1.0"
+              type="cylinder" size="0.015 0.025" pos="0.1 0.025 0.085" rgba="0.2 0.2 0.2 1"
+              density="7700" friction="2.0 0.5 0.2" contype="1" conaffinity="1" group="0"/>
+        <geom quat="0 0.7071 0 0.7071"
+              mesh="wood_block_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="800" friction="5.0 5.0 5.0" material="wood_block_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0.08 0 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.103" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.01" size="0.005" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>
