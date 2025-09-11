@@ -1,0 +1,46 @@
+<mujoco model="banana">
+  <asset>
+    <mesh name="banana_vis" file="meshes/banana_vis.obj" />
+    <mesh name="banana_mesh1" file="meshes/banana_parts/banana1.obj" />
+    <mesh name="banana_mesh2" file="meshes/banana_parts/banana2.obj" />
+    <mesh name="banana_mesh3" file="meshes/banana_parts/banana3.obj" />
+    <mesh name="banana_mesh4" file="meshes/banana_parts/banana4.obj" />
+    <mesh name="banana_mesh5" file="meshes/banana_parts/banana5.obj" />
+    <mesh name="banana_mesh6" file="meshes/banana_parts/banana6.obj" />
+    <texture name="banana_tex" file="textures/banana.png" type="2d" />
+    <material name="banana_mat" texture="banana_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              mesh="banana_vis" type="mesh" material="banana_mat" contype="0" conaffinity="0" group="1" />
+        <geom mesh="banana_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="banana_mesh2" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="banana_mesh3" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="banana_mesh4" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="banana_mesh5" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="banana_mesh6" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="banana_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <site name="grasp_0" pos="-0.0379 -0.0092 0.0201" quat="-0.0040 -0.0436 0.9949 0.0912" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_1" pos="0.0832 -0.0041 0.0205" quat="0.1220 -0.0868 0.9887 0.0107" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_2" pos="0.0197 0.0093 0.0110" quat="0.1220 -0.0868 0.9887 0.0107" size="0.005" rgba="0 1 0 0.5"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0.05 0 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.03" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.03" size="0.005" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

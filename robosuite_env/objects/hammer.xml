@@ -1,0 +1,58 @@
+<mujoco model="hammer">
+  <asset>
+    <mesh name="hammer_vis" file="meshes/hammer_vis.obj" />
+    <mesh name="hammer_mesh1" file="meshes/hammer_parts/hammer1.obj" />
+    <mesh name="hammer_mesh2" file="meshes/hammer_parts/hammer2.obj" />
+    <mesh name="hammer_mesh3" file="meshes/hammer_parts/hammer3.obj" />
+    <mesh name="hammer_mesh4" file="meshes/hammer_parts/hammer4.obj" />
+    <mesh name="hammer_mesh5" file="meshes/hammer_parts/hammer5.obj" />
+    <mesh name="hammer_mesh6" file="meshes/hammer_parts/hammer6.obj" />
+    <mesh name="hammer_mesh7" file="meshes/hammer_parts/hammer7.obj" />
+    <mesh name="hammer_mesh8" file="meshes/hammer_parts/hammer8.obj" />
+    <mesh name="hammer_mesh9" file="meshes/hammer_parts/hammer9.obj" />
+    <texture name="hammer_tex" file="textures/hammer.png" type="2d" />
+    <material name="hammer_mat" texture="hammer_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              mesh="hammer_vis" type="mesh" material="hammer_mat" contype="0" conaffinity="0" group="1" />
+        <geom mesh="hammer_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh2" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh3" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh4" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh5" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh6" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh7" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh8" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="hammer_mesh9" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1000" friction="1.0 0.3 0.1" material="hammer_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <site name="grasp_0" pos="0.0256 0.0729 0.0151" quat="-0.0617 0.7343 -0.6727 -0.0673" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_1" pos="0.0200 0.0045 0.0118" quat="-0.0617 0.7343 -0.6727 -0.0673" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_2" pos="0.0333 0.1336 0.0069" quat="-0.0617 0.7343 -0.6727 -0.0673" size="0.005" rgba="0 1 0 0.5"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0 0.16 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.03" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.01" size="0.005" rgba="0 0 0 0"/>    
+    </body>
+  </worldbody>
+</mujoco>

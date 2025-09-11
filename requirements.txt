@@ -1,0 +1,11 @@
+robosuite
+numpy==1.24
+torch==2.0.1
+torchvision==0.15.2
+h5py
+PyYAML
+rich
+matplotlib
+open3d
+transformations
+openai

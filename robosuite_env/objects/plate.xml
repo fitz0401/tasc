@@ -1,0 +1,279 @@
+<mujoco model="plate">
+  <asset>
+    <mesh name="plate_vis" file="meshes/plate_vis.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh0" file="meshes/plate_parts/plate0.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh1" file="meshes/plate_parts/plate1.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh2" file="meshes/plate_parts/plate2.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh3" file="meshes/plate_parts/plate3.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh4" file="meshes/plate_parts/plate4.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh5" file="meshes/plate_parts/plate5.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh6" file="meshes/plate_parts/plate6.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh7" file="meshes/plate_parts/plate7.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh8" file="meshes/plate_parts/plate8.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh9" file="meshes/plate_parts/plate9.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh10" file="meshes/plate_parts/plate10.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh11" file="meshes/plate_parts/plate11.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh12" file="meshes/plate_parts/plate12.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh13" file="meshes/plate_parts/plate13.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh14" file="meshes/plate_parts/plate14.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh15" file="meshes/plate_parts/plate15.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh16" file="meshes/plate_parts/plate16.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh17" file="meshes/plate_parts/plate17.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh18" file="meshes/plate_parts/plate18.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh19" file="meshes/plate_parts/plate19.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh20" file="meshes/plate_parts/plate20.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh21" file="meshes/plate_parts/plate21.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh22" file="meshes/plate_parts/plate22.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh23" file="meshes/plate_parts/plate23.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh24" file="meshes/plate_parts/plate24.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh25" file="meshes/plate_parts/plate25.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh26" file="meshes/plate_parts/plate26.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh27" file="meshes/plate_parts/plate27.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh28" file="meshes/plate_parts/plate28.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh29" file="meshes/plate_parts/plate29.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh30" file="meshes/plate_parts/plate30.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh31" file="meshes/plate_parts/plate31.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh32" file="meshes/plate_parts/plate32.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh33" file="meshes/plate_parts/plate33.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh34" file="meshes/plate_parts/plate34.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh35" file="meshes/plate_parts/plate35.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh36" file="meshes/plate_parts/plate36.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh37" file="meshes/plate_parts/plate37.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh38" file="meshes/plate_parts/plate38.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh39" file="meshes/plate_parts/plate39.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh40" file="meshes/plate_parts/plate40.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh41" file="meshes/plate_parts/plate41.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh42" file="meshes/plate_parts/plate42.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh43" file="meshes/plate_parts/plate43.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh44" file="meshes/plate_parts/plate44.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh45" file="meshes/plate_parts/plate45.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh46" file="meshes/plate_parts/plate46.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh47" file="meshes/plate_parts/plate47.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh48" file="meshes/plate_parts/plate48.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh49" file="meshes/plate_parts/plate49.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh50" file="meshes/plate_parts/plate50.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh51" file="meshes/plate_parts/plate51.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh52" file="meshes/plate_parts/plate52.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh53" file="meshes/plate_parts/plate53.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh54" file="meshes/plate_parts/plate54.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh55" file="meshes/plate_parts/plate55.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh56" file="meshes/plate_parts/plate56.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh57" file="meshes/plate_parts/plate57.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh58" file="meshes/plate_parts/plate58.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh59" file="meshes/plate_parts/plate59.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh60" file="meshes/plate_parts/plate60.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh61" file="meshes/plate_parts/plate61.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh62" file="meshes/plate_parts/plate62.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh63" file="meshes/plate_parts/plate63.obj" scale="0.8 0.8 0.8"/>
+    <mesh name="plate_mesh64" file="meshes/plate_parts/plate64.obj" scale="0.8 0.8 0.8"/>
+    <texture name="plate_tex" file="textures/plate.png" type="2d" />
+    <material name="plate_mat" texture="plate_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              mesh="plate_vis" type="mesh" material="plate_mat" contype="0" conaffinity="0" group="1" />
+        <geom mesh="plate_mesh0" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh2" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh3" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh4" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh5" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh6" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh7" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh8" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh9" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh10" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh11" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh12" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh13" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh14" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh15" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh16" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh17" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh18" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh19" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh20" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh21" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh22" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh23" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh24" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh25" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh26" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh27" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh28" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh29" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh30" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh31" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh32" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh33" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh34" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh35" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh36" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh37" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh38" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh39" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh40" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh41" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh42" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh43" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh44" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh45" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh46" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh47" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh48" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh49" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh50" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh51" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh52" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh53" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh54" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh55" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh56" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh57" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh58" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh59" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh60" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh61" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh62" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh63" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="plate_mesh64" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="3000" friction="1.0 0.3 0.1" material="plate_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0 0 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.03" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.01" size="0.005" rgba="0 0 0 0"/>    
+    </body>
+  </worldbody>
+</mujoco>

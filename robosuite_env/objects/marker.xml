@@ -1,0 +1,33 @@
+<mujoco model="marker">
+  <asset>
+    <mesh name="marker_vis" file="meshes/marker_vis.obj" scale="1.4 1.4 1.4" />
+    <mesh name="marker_mesh0" file="meshes/marker_parts/marker0.obj" scale="1.4 1.4 1.4" />
+    <mesh name="marker_mesh1" file="meshes/marker_parts/marker1.obj" scale="1.4 1.4 1.4" />
+    <mesh name="marker_mesh2" file="meshes/marker_parts/marker2.obj" scale="1.4 1.4 1.4" />
+    <texture name="marker_tex" file="textures/marker.png" type="2d" />
+    <material name="marker_mat" texture="marker_tex" texuniform="true" specular="0.2" shininess="0.3" reflectance="0.5" />
+  </asset>
+
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom name="body"
+              mesh="marker_vis" type="mesh" material="marker_mat" contype="0" conaffinity="0" group="1" />
+        <geom mesh="marker_mesh0" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1300" friction="10.0 10.0 10.0" material="marker_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="marker_mesh1" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1300" friction="10.0 10.0 10.0" material="marker_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <geom mesh="marker_mesh2" type="mesh" solimp="0.998 0.998 0.001" solref="0.001 1"
+              density="1300" friction="10.0 10.0 10.0" material="marker_mat"
+              group="0" condim="4" contype="1" conaffinity="1" rgba="0 0 0 0"/>
+        <site name="grasp_0" pos="-0.0501 0.0035 0.0142" quat="-0.0289 -0.7065 0.7065 0.0289" size="0.005" rgba="0 1 0 0.5"/>
+        <site name="grasp_1" pos="-0.0474 0.0627 0.0140" quat="-0.0491 -0.5861 0.7988 0.1262" size="0.005" rgba="0 1 0 0.5"/>
+      </body>
+      <site name="horizontal_radius_site" pos="0 0.06 0" size="0.005" rgba="0 0 0 0"/>
+      <site name="top_site" pos="0 0 0.009" size="0.005" rgba="0 0 0 0"/>
+      <site name="bottom_site" pos="0 0 -0.009" size="0.005" rgba="0 0 0 0"/>   
+    </body>
+  </worldbody>
+</mujoco>
