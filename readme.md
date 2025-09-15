@@ -2,7 +2,7 @@
 
 This is the official implementation for the paper "TASC: Task-Aware Shared Control for Teleoperated Manipulation".
 
-[Paper] | [[Website]](https://fitz0401.github.io/tasc-page/)
+[[Paper]](https://arxiv.org/abs/2509.10416) | [[Website]](https://fitz0401.github.io/tasc-page/)
 
 ## Installation
 ### Install `tasc`
@@ -160,7 +160,15 @@ We also thank the [robosuite](https://github.com/ARISE-Initiative/robosuite) com
 ## Citing
 If you find our paper interesting or useful in your work, please cite our paper:
 ```
-TBD
+@misc{fu2025tasc,
+      title={TASC: Task-Aware Shared Control for Teleoperated Manipulation}, 
+      author={Ze Fu and Pinhao Song and Yutong Hu and Renaud Detry},
+      year={2025},
+      eprint={2509.10416},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2509.10416}, 
+}
 ```
 
 
