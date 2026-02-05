@@ -89,56 +89,91 @@ class ObjectDetector:
             logger.info(f"Object {obj_id} center point: {center_pt[:3]}")
     
     def update_grasp_poses(self, scene_graph: SceneGraph, visualize=False, save_path=None):
+        ''' 
+        Generate and update grasp poses for objects using GraspNet-baseline.
+        
+        Coordinate System Transformation Explanation:
+        1. R_flip_z: GraspNet is trained with camera coordinate (Y-down, Z-forward).
+                     Robosuite uses world coordinate (Z-up). Flip Y and Z axes.
+        2. R_graspnet2robosuite: Transform GraspNet gripper frame to Robosuite gripper frame.
+                                  GraspNet: X-forward (approach), Y-closing, Z-perpendicular
+                                  Robosuite: Z-approach, Y-closing, X-perpendicular
         '''
-        Generate and update grasp poses for objects using AnyGrasp neural network.
-        Runs the AnyGrasp model on the scene point cloud to generate grasp poses, 
-        then assigns the best grasps to each object based on spatial proximity.
-        Args:
-            scene_graph (SceneGraph): Scene graph containing objects to generate grasps for
-            visualize (bool, optional): Whether to display 3D grasp visualization. Defaults to False.
-            save_path (str, optional): Path to save grasp visualization image. Defaults to None.
-        Updates:
-            - Grasp poses for each object node in the scene graph
-            - Top-N grasp candidates selected using farthest point sampling
-        '''
-        # Load the AnyGrasp model
         import sys
-        sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-        from tasc.vision_module.gsnet import AnyGrasp
-        import argparse
-        import multiprocessing as mp
-        self.anygrasp_config = self.config["grasp_planner"]
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        ckpt_path = os.path.join(base_dir, self.anygrasp_config["checkpoint_path"])
-        cfgs = argparse.Namespace(
-            checkpoint_path=ckpt_path,
-            max_gripper_width=self.anygrasp_config["max_gripper_width"],
-            gripper_height=self.anygrasp_config["gripper_height"],
-            top_down_grasp=self.anygrasp_config["top_down_grasp"],
-            debug=self.anygrasp_config["debug"]
-        )
-        self.anygrasp = AnyGrasp(cfgs)
-        self.anygrasp.load_net()
-
-        # Align with anygrasp coordinate system
+        import torch
+        graspnet_path = os.path.expanduser('~/tasc/graspnet-baseline')
+        sys.path.insert(0, graspnet_path)
+        sys.path.insert(0, os.path.join(graspnet_path, 'models'))
+        sys.path.insert(0, os.path.join(graspnet_path, 'utils'))
+        from graspnet import GraspNet, pred_decode
+        from collision_detector import ModelFreeCollisionDetector
+        from graspnetAPI import GraspGroup
+        
+        # Load config
+        grasp_config = self.config.get("grasp_planner", {})
+        checkpoint_path = os.path.expanduser(grasp_config.get("checkpoint_path", "~/tasc/ckpts/checkpoint-rs.tar"))
+        num_point = grasp_config.get("num_point", 20000)
+        num_view = grasp_config.get("num_view", 300)
+        collision_thresh = grasp_config.get("collision_thresh", 0.01)
+        voxel_size = grasp_config.get("voxel_size", 0.01)
+        
+        # Initialize GraspNet model
+        net = GraspNet(input_feature_dim=0, num_view=num_view, num_angle=12, num_depth=4,
+                      cylinder_radius=0.05, hmin=-0.02, hmax_list=[0.01,0.02,0.03,0.04], is_training=False)
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        net.to(device)
+        checkpoint = torch.load(checkpoint_path, map_location=device)
+        net.load_state_dict(checkpoint['model_state_dict'])
+        net.eval()
+        
+        # Coordinate transformation: Robosuite -> GraspNet input
         R_flip_z = np.diag([1, -1, -1])
-        pcd_filp_z = self.task_pcd_global @ R_flip_z.T
-        gg, cloud = self.anygrasp.get_grasp(
-            pcd_filp_z.astype(np.float32),
-            self.valid_color,
-            lims=self.anygrasp_config['bounds'], 
-            apply_object_mask=True, 
-            dense_grasp=False, 
-            collision_detection=True
-        )
+        pcd_flip_z = self.task_pcd_global @ R_flip_z.T
+        
+        # Sample points
+        cloud_masked = pcd_flip_z.astype(np.float32)
+        color_masked = self.valid_color
+        if len(cloud_masked) >= num_point:
+            idxs = np.random.choice(len(cloud_masked), num_point, replace=False)
+        else:
+            idxs1 = np.arange(len(cloud_masked))
+            idxs2 = np.random.choice(len(cloud_masked), num_point-len(cloud_masked), replace=True)
+            idxs = np.concatenate([idxs1, idxs2], axis=0)
+        cloud_sampled = cloud_masked[idxs]
+        
+        # Run inference
+        end_points = {}
+        cloud_sampled_tensor = torch.from_numpy(cloud_sampled[np.newaxis]).to(device)
+        end_points['point_clouds'] = cloud_sampled_tensor
+        
+        with torch.no_grad():
+            end_points = net(end_points)
+            grasp_preds = pred_decode(end_points)
+        
+        gg_array = grasp_preds[0].detach().cpu().numpy()
+        gg = GraspGroup(gg_array)
+        
+        # Collision detection (in GraspNet coordinate)
+        if collision_thresh > 0:
+            mfcdetector = ModelFreeCollisionDetector(cloud_masked, voxel_size=voxel_size)
+            collision_mask = mfcdetector.detect(gg, approach_dist=0.05, collision_thresh=collision_thresh)
+            gg = gg[~collision_mask]
+        
         gg = gg.nms().sort_by_score()
-        # show grasp poses globally
-        trans_mat = np.diag([1, -1, -1, 1])
-        cloud.transform(trans_mat)
+        
+        # Visualize if needed (transform back to Robosuite coordinate)
         if visualize:
-            grippers = gg.to_open3d_geometry_list()
-            for gripper in grippers:
+            import multiprocessing as mp
+            trans_mat = np.diag([1, -1, -1, 1])
+            cloud_vis = o3d.geometry.PointCloud()
+            cloud_vis.points = o3d.utility.Vector3dVector(cloud_masked)
+            cloud_vis.colors = o3d.utility.Vector3dVector(color_masked)
+            cloud_vis.transform(trans_mat)
+            
+            grippers_vis = gg.to_open3d_geometry_list()
+            for gripper in grippers_vis:
                 gripper.transform(trans_mat)
+            
             def visualize_grasps(grippers, cloud, save_path=None):
                 vis = o3d.visualization.Visualizer()
                 vis.create_window()
@@ -148,29 +183,40 @@ class ObjectDetector:
                 vis.run()
                 if save_path is not None:
                     vis.capture_screen_image(save_path)
-                    print(f"Grasp visualization saved to: {save_path}")
                 vis.destroy_window()
-            p = mp.Process(target=visualize_grasps, args=(grippers, cloud, save_path))
+            
+            p = mp.Process(target=visualize_grasps, args=(grippers_vis, cloud_vis, save_path))
             p.start()
             p.join()
         
-        R_anygrasp2robosuite = np.array([[0, 0, 1], [0, -1, 0], [1, 0, 0]])
+        # Convert grasps to Robosuite coordinate and assign to objects
         all_grasp_poses = {obj_id: [] for obj_id in scene_graph.nodes_dict.keys()}
+        z_limit = grasp_config.get('table_height', 0.0) + grasp_config.get('z_limit_above_table', 0.05)
+        z_offset = grasp_config.get('z_offset', 0.0)
+        R_graspnet2robosuite = np.array([[0, 0, 1], [0, -1, 0], [1, 0, 0]])
+        
         for grasp in gg:
             pose_matrix = np.eye(4)
-            pose_matrix[:3, :3] =  R_flip_z @ grasp.rotation_matrix.copy() @ R_anygrasp2robosuite
-            pose_matrix[:3, 3] = R_flip_z @ grasp.translation.copy()
-            if pose_matrix[2, 3] < self.anygrasp_config['table_height'] + self.anygrasp_config['z_limit_above_table']:
+            pose_matrix[:3, :3] = R_flip_z @ grasp.rotation_matrix @ R_graspnet2robosuite
+            pose_matrix[:3, 3] = R_flip_z @ grasp.translation
+            
+            if pose_matrix[2, 3] < z_limit:
                 continue
-            pose_matrix[:3, 3] += self.anygrasp_config['z_offset'] * pose_matrix[:3, 2]  # Move along the z-axis
+            
+            if z_offset != 0:
+                pose_matrix[:3, 3] += z_offset * pose_matrix[:3, 2]
+            
             grasp_pos = pose_matrix[:3, 3]
             u, v = project_point_world2img(grasp_pos, self.intrinsic_matrix, self.T_world2cam, 
-                                           is_mujoco_camera=self.config['vision_module'].get('is_mujoco_camera', True))
+                                          is_mujoco_camera=self.config['vision_module'].get('is_mujoco_camera', True))
+            
             for obj_id, obj_node in scene_graph.nodes_dict.items():
                 dilated_mask = cv2.dilate(obj_node.image_mask.astype(np.uint8), np.ones((5, 5), np.uint8))
-                if dilated_mask[v, u]:
+                if 0 <= v < dilated_mask.shape[0] and 0 <= u < dilated_mask.shape[1] and dilated_mask[v, u]:
                     all_grasp_poses[obj_id].append(pose_matrix)
                     break
+        
+        # Select top-N grasps per object
         top_n = 5
         for obj_id, obj_node in scene_graph.nodes_dict.items():
             obj_grasp_poses = all_grasp_poses[obj_id]

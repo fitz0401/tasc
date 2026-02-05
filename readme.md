@@ -14,70 +14,53 @@ pip install -e .
 ```
 
 ### Install Other Dependencies
-> **Note:** This installation is optional. We provide offline segmentation and grasp pose results for quick testing. Install this if you want to try the complete pipeline.
+> **Note:** These installations are optional. We provide offline segmentation and grasp pose results for quick testing. Install this if you want to try the complete pipeline.
 
 
 - `Grounded-SAM`
 
-Clone the [Grounded-SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) repository, set some environment variables and install [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) and [SAM](https://arxiv.org/abs/2304.02643).
-```bash
-git clone git@github.com:IDEA-Research/Grounded-Segment-Anything.git
-export AM_I_DOCKER=False
-export BUILD_WITH_CUDA=True
-export CUDA_HOME=/path/to/cuda/
-python -m pip install -e segment_anything
-pip install --no-build-isolation -e GroundingDINO
-```
-
-Download DINO and SAM checkpoints, in TASC root directory:
-```bash
-mkdir ckpts && cd ckpts
-wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
-wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
-```
-
-- `AnyGrasp`
-
-Check [anygrasp_sdk](https://github.com/graspnet/anygrasp_sdk) and follow the installation guide. 
-
-1. Install [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) manually following [the official instsallation instructions](https://github.com/NVIDIA/MinkowskiEngine?tab=readme-ov-file#cuda-11x).
+    Clone the [Grounded-SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) repository, set some environment variables and install [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) and [SAM](https://arxiv.org/abs/2304.02643).
     ```bash
-    mkdir dependencies && cd dependencies
-    conda install openblas-devel -c anaconda
-    export CUDA_HOME=/usr/local/cuda-11.x
-    git clone git@github.com:NVIDIA/MinkowskiEngine.git
-    cd MinkowskiEngine
-    python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
+    git clone git@github.com:IDEA-Research/Grounded-Segment-Anything.git
+    export AM_I_DOCKER=False
+    export BUILD_WITH_CUDA=True
+    export CUDA_HOME=/path/to/cuda/
+    python -m pip install -e segment_anything
+    pip install --no-build-isolation -e GroundingDINO
     ```
-    The following installation notes are adapted from [MBA](https://github.com/Selen-Suyue/MBA/blob/main/assets/docs/INSTALL.md) for compatibility reference:
-    "For CUDA 12.1, the installation of MinkowskiEngine may be incompatible. You may need to add some headers in MinkowskiEngine. Refer to [issue#543](https://github.com/NVIDIA/MinkowskiEngine/issues/543).  
-    In addition, for some necessary environment variable settings and to deal with module missing problems during the installation process, we recommend you to refer to the MinkowskiEngine section of this [blog](https://axi404.top/blog/anygrasp#minkowskiengine)."
 
-2. Install other requirements from Pip.
+    Download DINO and SAM checkpoints, in TASC root directory:
+    ```bash
+    mkdir ckpts && cd ckpts
+    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+    wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
+    ```
+
+- `GraspNet`
+
+1. Clone the repo.
+    ```bash
+    cd ~/tasc
+    git clone https://github.com/graspnet/graspnet-baseline.git
+    cd graspnet-baseline
+    ```
+2. Install packages, pointnet2 operators, knn operator and graspnetAPI.
     ```bash
     pip install -r requirements.txt
-    ```
-
-3. Install pointnet2 module.
-    ```bash
     cd pointnet2
     python setup.py install
+    cd ../knn
+    python setup.py install
+    cd ..
+    git clone https://github.com/graspnet/graspnetAPI.git
+    cd graspnetAPI
+    pip install .
     ```
-
-Then, follow the [license_registration](https://github.com/graspnet/anygrasp_sdk?tab=readme-ov-file#license-registration) to request an anygrasp_sdk license. 
-
-Place the license, library and weight files under `tasc/vision_module`:
-
-```
-tasc/vision_module
-    ├── gsnet.so
-    ├── lib_cxx.so  # Make sure the *.so file is compatible with Python 3.8
-    ├── license     # Your requested license file here
-    ├── log
-         └── checkpoint_detection.tar    # Weights here
-```
-
-> **Notes**: To avoid the license request process, you can modify the AnyGrasp-related code in `tasc/vision_module/object_detector.py`, specifically the `ObjectDetector.update_grasp_poses()`, to use [GraspNet Baseline](https://github.com/graspnet/graspnet-baseline) or other grasping models of your choice.
+3. Download GraspNet checkpoints: [`checkpoint-rs.tar`](https://drive.google.com/file/d/1hd0G8LN6tRpi4742XOTEisbTXNZ-1jmk/view?usp=sharing), in TASC root directory:
+    ```bash
+    mv ./checkpoint-rs.tar ~/tasc/ckpts
+    ```
+    Please refer to [graspnet-baseline repo](https://github.com/graspnet/graspnet-baseline) for troubleshooting.
 
 ## Usage
 
@@ -104,7 +87,10 @@ Other arguments:
 python tasc/tasc_simulation.py --debug
 
 # Run TASC with online query
-python tasc/tasc_simulation.py --llm
+python tasc/tasc_simulation.py --use_llm
+
+# Run TASC with grasping planner
+python tasc/tasc_simulation.py --use_graspnet
 
 # Run in pure teleoperation mode (for comparison)
 python tasc/tasc_simulation.py --pure_teleop
