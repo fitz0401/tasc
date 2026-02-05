@@ -34,7 +34,8 @@ if __name__ == "__main__":
     parser.add_argument("--debug", action="store_true", help="Enable debug mode")
     parser.add_argument("--record", action="store_true", help="Record the simulation data")
     parser.add_argument("--pure_teleop", action="store_true", help="Disable the assist mode")
-    parser.add_argument("--llm", action="store_true", help="Use LLM for relationship and pose constraints")
+    parser.add_argument("--use_llm", action="store_true", help="Use LLM for relationship and pose constraints")
+    parser.add_argument("--use_graspnet", action="store_true", help="Use GraspNet-baseline for grasp planning")
     args = parser.parse_args()
 
     # Set debug mode
@@ -42,7 +43,8 @@ if __name__ == "__main__":
     enable_debug = args.debug
     enable_record = args.record
     is_assistance_disabled = args.pure_teleop
-    use_llm = args.llm
+    use_llm = args.use_llm
+    use_graspnet = args.use_graspnet
 
     # Load global config and simulation info
     config_path = os.path.join(script_dir, f"../configs/config.yaml")
@@ -223,8 +225,8 @@ if __name__ == "__main__":
                     Grasp Planning
                     '''
                     ## Grasp Planner
-                    if use_llm:
-                        object_detector.update_grasp_poses(scene_graph, visualize=False)
+                    if use_graspnet:
+                        object_detector.update_grasp_poses(scene_graph, visualize=True)
                     else:
                         object_detector.update_grasp_poses_offline(scene_graph, sim_name_dict, env.sim)
 
