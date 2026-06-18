@@ -1,10 +1,12 @@
-# TASC: Task-Aware Shared Control for Teleoperated Manipulation
-
-This is the official implementation for the paper "TASC: Task-Aware Shared Control for Teleoperated Manipulation".
+# TASC: Task-Aware Shared Control for Relational Telemanipulation
 
 [[Paper]](https://arxiv.org/abs/2509.10416) | [[Website]](https://fitz0401.github.io/tasc-page/)
 
-## Installation
+## 📰 News
+- **2026-06-17** — Accepted by IROS 2026 🎉
+- **2026-06-07** — 🥈 2nd place at the [NeuroDesign Competition in ICRA 2026 NeuroDesign in HRI Workshop](https://neurodesign-in-hri.webflow.io/)
+
+## 🔧 Installation
 ### Install `tasc`
 ```bash
 conda create -n tasc python=3.8
@@ -13,7 +15,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-### Install Other Dependencies
+### 📦 Install Other Dependencies
 > **Note:** These installations are optional. We provide offline segmentation and grasp pose results for quick testing. Install this if you want to try the complete pipeline.
 
 
@@ -62,7 +64,7 @@ pip install -e .
     ```
     Please refer to [graspnet-baseline repo](https://github.com/graspnet/graspnet-baseline) for troubleshooting.
 
-## Usage
+## 🚀 Usage
 
 Run TASC with stored query results:
 ```bash
@@ -104,7 +106,7 @@ Analyse operation data:
 python tasc/result_analyzer.py --input tasc --episode_idx 1 --task_idx 1
 ```
 
-## Running on a Headless Server
+## 🖥️ Running on a Headless Server
 If you need to run TASC on a headless server (no monitor attached) and display the GUI on your local machine, you can use X11 forwarding.
 
 ### On Windows
@@ -126,7 +128,7 @@ ssh -Y <user>@<server-ip>
 ssh -Y <user>@<server-ip>
 ```
 
-## Real World
+## 🦾 Real World
 
 See our real-world setup in this [repo](https://github.com/fitz0401/tasc_ros2_ws).
 
@@ -135,7 +137,7 @@ See our real-world setup in this [repo](https://github.com/fitz0401/tasc_ros2_ws
 In shrot, we use [moveit_servo](https://moveit.picknik.ai/main/doc/how_to_guides/controller_teleoperation/controller_teleoperation.html) to teleoperate a [Franka Research3 robot in ROS2](https://github.com/frankarobotics/franka_ros2) environment. We also seperate the ROS2 and CUDA environment and use websocket to communicate, to aviod python version conflict.
 
 
-## Acknowledgements
+## 🙏 Acknowledgements
 We gratefully acknowledge the following open-source projects that greatly facilitated our work:
 
 - Segmentation pipeline adapted from [MOKA](https://github.com/moka-manipulation/moka/tree/main).
@@ -143,7 +145,7 @@ We gratefully acknowledge the following open-source projects that greatly facili
 
 We also thank the [robosuite](https://github.com/ARISE-Initiative/robosuite) community for providing an excellent simulation framework that supported our research.
 
-## Citing
+## 📄 Citing
 If you find our paper interesting or useful in your work, please cite our paper:
 ```
 @misc{fu2025tasc,
